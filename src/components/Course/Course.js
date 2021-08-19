@@ -10,12 +10,19 @@ const Course = () => {
             .then(data =>
                 setCourse(data)
             )
-    }, [])
-
+    }, []);
+    // handle add product button
+    const handleAddProduct = (course) => {
+        console.log('addeed', course);
+    }
     return (
         <div>
             {
-                course.map(course => <CourseDetails course={course} key={course.tracking_id} > </CourseDetails>)
+                course.map(course => <CourseDetails
+                    course={course}
+                    key={course.tracking_id}
+                    handleAddProduct={handleAddProduct}
+                > </CourseDetails>)
             }
         </div>
     );
