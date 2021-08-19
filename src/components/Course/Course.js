@@ -20,7 +20,6 @@ const Course = () => {
         setCart(newCart);
     }
 
-
     return (
         <div>
             {
