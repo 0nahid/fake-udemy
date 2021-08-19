@@ -11,15 +11,22 @@ const Course = () => {
                 setCourse(data)
             )
     }, []);
+    // cart 
+    const [cart, setCart] = useState([]);
+
     // handle add product button
     const handleAddProduct = (course) => {
-        console.log('addeed', course);
+        const newCart = [...cart, course];
+        setCart(newCart);
     }
+
+
     return (
         <div>
             {
                 course.map(course => <CourseDetails
                     course={course}
+                    cart={cart}
                     key={course.tracking_id}
                     handleAddProduct={handleAddProduct}
                 > </CourseDetails>)
